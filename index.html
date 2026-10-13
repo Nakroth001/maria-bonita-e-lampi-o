@@ -1,0 +1,1100 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0909">
+<title>Maria Bonita & Lampião | Bar e Restaurante</title>
+<meta name="description" content="Maria Bonita & Lampião — Bar e Restaurante. Confira nossos pratos, drinks e bebidas e venha curtir com a gente.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #0b0909;
+  --dark: #151010;
+  --red: #df3038;
+  --yellow: #f5c928;
+  --white: #fff9ef;
+  --muted: #bcb2aa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+header {
+  background: rgba(11,9,9,.97);
+  border-bottom: 1px solid #302222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.brand img {
+  width: 59px;
+  height: 59px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #000;
+}
+
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.brand-name span {
+  display: block;
+  color: var(--red);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: var(--yellow);
+}
+
+.nav-cta {
+  padding: 11px 17px;
+  border-radius: 5px;
+  color: var(--black);
+  background: var(--yellow);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid #51403a;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+  min-height: 610px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(11,9,9,.98) 0%, rgba(11,9,9,.87) 48%, rgba(11,9,9,.36) 100%),
+    url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1800&q=85') center/cover;
+}
+
+.hero-content {
+  max-width: 670px;
+  padding: 90px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: var(--yellow);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 800;
+  margin-bottom: 17px;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  margin-bottom: 23px;
+}
+
+h1 span {
+  color: var(--yellow);
+}
+
+.hero p {
+  color: #e0d6ce;
+  max-width: 510px;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.btn {
+  min-height: 49px;
+  padding: 13px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 13px;
+  transition: .2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-yellow {
+  background: var(--yellow);
+  color: #17110a;
+}
+
+.btn-red {
+  background: var(--red);
+  color: white;
+}
+
+.btn-outline {
+  border: 1px solid #81756a;
+  color: white;
+}
+
+.btn-outline:hover {
+  border-color: var(--yellow);
+}
+
+.highlights {
+  border-top: 1px solid #33251c;
+  border-bottom: 1px solid #33251c;
+  background: #15100e;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.highlight {
+  padding: 24px 18px;
+  text-align: center;
+  border-right: 1px solid #33251c;
+}
+
+.highlight:last-child {
+  border: 0;
+}
+
+.highlight strong {
+  display: block;
+  color: var(--yellow);
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.highlight span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+section {
+  padding: 85px 0;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 42px;
+}
+
+.section-head .eyebrow {
+  margin-bottom: 12px;
+}
+
+.section-head h2 {
+  font-size: clamp(32px, 4vw, 46px);
+  margin-bottom: 14px;
+}
+
+.section-head p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.menu-card {
+  background: #171211;
+  border: 1px solid #33251f;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform .25s, border-color .25s;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  border-color: #8e6f25;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  display: block;
+  background: #201917;
+}
+
+.card-content {
+  padding: 23px;
+}
+
+.card-content h3 {
+  font-size: 23px;
+  margin-bottom: 9px;
+}
+
+.card-content p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.card-link {
+  color: var(--yellow);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.card-link:hover {
+  color: white;
+}
+
+.about {
+  background:
+    radial-gradient(ellipse at 10% 50%, rgba(223,48,56,.09), transparent 45%),
+    #130e0d;
+  border-top: 1px solid #2a1d19;
+  border-bottom: 1px solid #2a1d19;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #3b2922;
+}
+
+.about-image::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: -12px;
+  bottom: -12px;
+  border: 1px solid rgba(245,201,40,.45);
+  border-radius: 8px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-image img {
+  position: relative;
+  z-index: 1;
+}
+
+.about-text h2 {
+  font-size: clamp(32px, 4vw, 45px);
+  margin-bottom: 20px;
+}
+
+.about-text h2 span {
+  color: var(--yellow);
+}
+
+.about-text p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.about-text .btn {
+  margin-top: 10px;
+}
+
+.drinks {
+  background: var(--black);
+}
+
+.drink-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.drink-card {
+  background: #171211;
+  border: 1px solid #33251f;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drink-card img {
+  display: block;
+  width: 100%;
+  height: 205px;
+  object-fit: cover;
+}
+
+.drink-info {
+  padding: 17px;
+}
+
+.drink-info h3 {
+  font-size: 19px;
+  margin-bottom: 7px;
+}
+
+.drink-info p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.drinks-note {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.callout {
+  padding: 75px 0;
+  text-align: center;
+  background:
+    linear-gradient(rgba(120,16,20,.89), rgba(120,16,20,.89)),
+    url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80') center/cover;
+  border-top: 1px solid #8b252b;
+  border-bottom: 1px solid #8b252b;
+}
+
+.callout h2 {
+  font-size: clamp(30px, 4vw, 45px);
+  margin-bottom: 15px;
+}
+
+.callout p {
+  max-width: 570px;
+  margin: 0 auto 25px;
+  color: #f2dede;
+  font-size: 14px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.contact-card {
+  background: #171211;
+  border: 1px solid #33251f;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.contact-card h3 {
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.contact-item {
+  padding: 13px 0;
+  border-bottom: 1px solid #302320;
+}
+
+.contact-item:last-child {
+  border: 0;
+}
+
+.contact-item strong {
+  display: block;
+  color: var(--yellow);
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.contact-item p,
+.contact-item a {
+  color: #d5c9c0;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+  color: var(--yellow);
+}
+
+.map-placeholder {
+  min-height: 250px;
+  background: #211816;
+  border: 1px dashed #634a3e;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+}
+
+.map-placeholder .map-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.map-placeholder h3 {
+  margin-bottom: 8px;
+}
+
+.map-placeholder p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+footer {
+  padding: 35px 0;
+  border-top: 1px solid #30221d;
+  background: #080707;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.footer-brand span {
+  color: var(--red);
+}
+
+.footer-content p {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.footer-links a:hover {
+  color: var(--yellow);
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 90;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #20c866;
+  color: white;
+  font-size: 27px;
+  box-shadow: 0 5px 22px rgba(0,0,0,.4);
+  transition: .2s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.07);
+}
+
+@media (max-width: 900px) {
+  nav {
+    gap: 13px;
+    font-size: 12px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .drink-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 680px) {
+  .nav {
+    min-height: 72px;
+  }
+
+  .brand img {
+    width: 49px;
+    height: 49px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  .brand-name span {
+    font-size: 9px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 72px;
+    padding: 20px 5%;
+    background: #100c0b;
+    border-bottom: 1px solid #33251f;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 12px 0;
+    border-bottom: 1px solid #2b201c;
+  }
+
+  nav .nav-cta {
+    text-align: center;
+    margin-top: 12px;
+    padding: 13px;
+  }
+
+  .hero {
+    min-height: 570px;
+    background-position: 58% center;
+  }
+
+  .hero-content {
+    padding: 75px 0;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .highlight {
+    padding: 18px 7px;
+  }
+
+  .highlight strong {
+    font-size: 12px;
+  }
+
+  .highlight span {
+    font-size: 10px;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .menu-card img {
+    height: 230px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-image img {
+    height: 310px;
+  }
+
+  .drink-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 12px;
+  }
+
+  .drink-card img {
+    height: 150px;
+  }
+
+  .drink-info {
+    padding: 13px;
+  }
+
+  .drink-info h3 {
+    font-size: 16px;
+  }
+
+  .drink-info p {
+    font-size: 11px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 22px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+
+  .whatsapp-float {
+    width: 53px;
+    height: 53px;
+    right: 15px;
+    bottom: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#inicio" class="brand">
+      <img src="logo.png" alt="Logo Maria Bonita e Lampião">
+      <div class="brand-name">
+        Maria Bonita & Lampião
+        <span>Bar e Restaurante</span>
+      </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+    <nav id="navMenu">
+      <a href="#inicio">Início</a>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#drinks">Drinks e bebidas</a>
+      <a href="#contato">Contato</a>
+      <a href="#" class="nav-cta" data-whatsapp>Fale conosco ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">Bar e Restaurante</div>
+      <h1>Comida boa,<br>drink gelado e<br><span>momentos especiais.</span></h1>
+      <p>
+        Seu lugar para reunir os amigos, aproveitar pratos deliciosos,
+        brindar com bons drinks e curtir aquele ambiente especial.
+        Seja bem-vindo ao Maria Bonita & Lampião!
+      </p>
+      <div class="buttons">
+        <a href="#cardapio" class="btn btn-yellow">🍽️ Conheça nosso cardápio</a>
+        <a href="#" class="btn btn-outline" data-whatsapp>💬 Entre em contato</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="highlights">
+  <div class="container highlight-grid">
+    <div class="highlight">
+      <strong>🍛 Pratos deliciosos</strong>
+      <span>Sabor para aproveitar cada momento</span>
+    </div>
+    <div class="highlight">
+      <strong>🍹 Drinks especiais</strong>
+      <span>Brinde aos bons momentos</span>
+    </div>
+    <div class="highlight">
+      <strong>🍺 Bebidas geladas</strong>
+      <span>A companhia perfeita para seu rolê</span>
+    </div>
+  </div>
+</div>
+
+<section id="cardapio">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Sabor que conquista</div>
+      <h2>Um cardápio para abrir o apetite</h2>
+      <p>Daquela refeição caprichada ao petisco para dividir com os amigos, aqui o convite é aproveitar.</p>
+    </div>
+
+    <div class="menu-grid">
+
+      <article class="menu-card">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85" alt="Prato de comida bem servido" loading="lazy">
+        <div class="card-content">
+          <h3>Pratos especiais</h3>
+          <p>Refeições saborosas e preparadas para deixar seu momento ainda melhor.</p>
+          <a href="#" class="card-link" data-whatsapp data-message="Olá! Gostaria de conhecer os pratos disponíveis no Maria Bonita & Lampião.">Consultar pratos ↗</a>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?auto=format&fit=crop&w=900&q=85" alt="Petiscos servidos à mesa" loading="lazy">
+        <div class="card-content">
+          <h3>Petiscos e porções</h3>
+          <p>Opções para compartilhar, acompanhar a bebida e aproveitar com a galera.</p>
+          <a href="#" class="card-link" data-whatsapp data-message="Olá! Quais petiscos e porções vocês têm disponíveis?">Consultar porções ↗</a>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=900&q=85" alt="Drink refrescante servido em copo" loading="lazy">
+        <div class="card-content">
+          <h3>Drinks e bebidas</h3>
+          <p>Drinks refrescantes e bebidas para acompanhar sua experiência.</p>
+          <a href="#drinks" class="card-link">Explorar bebidas ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="text-align:center;margin-top:35px">
+      <a href="#" class="btn btn-red" data-whatsapp data-message="Olá! Poderiam me enviar o cardápio completo e os preços?">Solicitar cardápio completo</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="container about-grid">
+
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85" alt="Ambiente de bar e restaurante" loading="lazy">
+    </div>
+
+    <div class="about-text">
+      <div class="eyebrow">Muito prazer!</div>
+      <h2>Maria Bonita <span>&</span> Lampião</h2>
+      <p>
+        Mais que um bar e restaurante, um lugar para aproveitar a boa
+        comida, encontrar os amigos e criar boas lembranças.
+      </p>
+      <p>
+        Seja para fazer uma refeição, experimentar um drink ou simplesmente
+        curtir uma bebida gelada, queremos fazer parte dos seus bons momentos.
+      </p>
+      <p>
+        Chame a galera, venha conhecer nosso espaço e aproveite!
+      </p>
+      <a href="#contato" class="btn btn-yellow">Venha nos conhecer</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="drinks" id="drinks">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="eyebrow">É hora de brindar</div>
+      <h2>Drinks, cervejas e muito mais</h2>
+      <p>Escolha sua bebida favorita e aproveite. Consulte as opções disponíveis diretamente com nossa equipe.</p>
+    </div>
+
+    <div class="drink-grid">
+
+      <article class="drink-card">
+        <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=700&q=85" alt="Drink colorido refrescante" loading="lazy">
+        <div class="drink-info">
+          <h3>Drinks especiais</h3>
+          <p>Combinações refrescantes para brindar.</p>
+        </div>
+      </article>
+
+      <article class="drink-card">
+        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=700&q=85" alt="Coquetel com gelo e frutas" loading="lazy">
+        <div class="drink-info">
+          <h3>Coquetéis</h3>
+          <p>Opções para diferentes gostos.</p>
+        </div>
+      </article>
+
+      <article class="drink-card">
+        <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=700&q=85" alt="Cerveja servida em copo" loading="lazy">
+        <div class="drink-info">
+          <h3>Cervejas</h3>
+          <p>Consulte as marcas e opções geladas.</p>
+        </div>
+      </article>
+
+      <article class="drink-card">
+        <img src="https://images.unsplash.com/photo-1536935338788846bb9981813?auto=format&fit=crop&w=700&q=85" alt="Bebidas e coquetéis" loading="lazy">
+        <div class="drink-info">
+          <h3>Outras bebidas</h3>
+          <p>Consulte nossa variedade disponível.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="drinks-note">As opções, marcas e disponibilidade podem variar. Consulte nossa equipe.</p>
+
+  </div>
+</section>
+
+<section class="callout">
+  <div class="container">
+    <div class="eyebrow">Junte a sua turma</div>
+    <h2>Os melhores momentos merecem um brinde.</h2>
+    <p>
+      Chame os amigos, escolha sua bebida favorita e venha aproveitar
+      o Maria Bonita & Lampião.
+    </p>
+    <a href="#" class="btn btn-yellow" data-whatsapp data-message="Olá! Gostaria de saber mais sobre o Maria Bonita & Lampião.">Fale com a gente pelo WhatsApp ↗</a>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="eyebrow">Estamos esperando por você</div>
+      <h2>Venha nos visitar</h2>
+      <p>Entre em contato para consultar o cardápio, as bebidas disponíveis e as informações de atendimento.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3>Fale com nossa equipe</h3>
+
+        <div class="contact-item">
+          <strong>📱 WHATSAPP</strong>
+          <a href="#" data-whatsapp>Chamar no WhatsApp</a>
+        </div>
+
+        <div class="contact-item">
+          <strong>📍 ENDEREÇO</strong>
+          <p>Adicione aqui o endereço do estabelecimento.</p>
+        </div>
+
+        <div class="contact-item">
+          <strong>🕒 HORÁRIO DE FUNCIONAMENTO</strong>
+          <p>Consulte nossos horários de atendimento.</p>
+        </div>
+
+        <div class="contact-item">
+          <strong>🍽️ CARDÁPIO</strong>
+          <a href="#" data-whatsapp data-message="Olá! Poderiam me enviar o cardápio atualizado, por favor?">Solicitar cardápio atualizado ↗</a>
+        </div>
+      </div>
+
+      <div class="map-placeholder">
+        <div class="map-icon">📍</div>
+        <h3>Como chegar</h3>
+        <p>O endereço pode ser adicionado aqui para facilitar a chegada dos clientes.</p>
+        <a href="#" class="btn btn-outline" id="mapsLink">Adicionar localização</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <div>
+      <div class="footer-brand">Maria Bonita <span>&</span> Lampião</div>
+      <p>Bar e Restaurante · Sabor e bons momentos.</p>
+      <p>© <span id="year"></span> Maria Bonita & Lampião. Todos os direitos reservados.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#inicio">Início</a>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="whatsapp-float" data-whatsapp aria-label="Falar pelo WhatsApp" title="Fale conosco">☏</a>
+
+<script>
+/*
+  PERSONALIZE ESTES DADOS ANTES DE PUBLICAR:
+
+  1. WhatsApp: DDI + DDD + número, somente números.
+     Exemplo fictício: 5531999999999
+
+  2. Endereço: coloque o endereço real do estabelecimento.
+
+  3. Horários: substitua os textos pelos horários reais.
+*/
+
+const WHATSAPP_NUMBER = "SEUNUMERO";
+const BUSINESS_ADDRESS = "ENDERECO DO ESTABELECIMENTO";
+
+function openWhatsApp(message) {
+  if (!/^\d{12,15}$/.test(WHATSAPP_NUMBER)) {
+    alert("O WhatsApp ainda precisa ser configurado pelo responsável pelo site.");
+    return;
+  }
+
+  const url = "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(message || "Olá! Gostaria de conhecer o Maria Bonita & Lampião.");
+
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
+document.querySelectorAll("[data-whatsapp]").forEach(function(link) {
+  link.addEventListener("click", function(event) {
+    event.preventDefault();
+    openWhatsApp(link.dataset.message);
+  });
+});
+
+document.getElementById("mapsLink").addEventListener("click", function(event) {
+  event.preventDefault();
+
+  if (BUSINESS_ADDRESS === "ENDERECO DO ESTABELECIMENTO") {
+    alert("Adicione o endereço real do estabelecimento no código para ativar a localização.");
+    return;
+  }
+
+  window.open(
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent(BUSINESS_ADDRESS),
+    "_blank",
+    "noopener,noreferrer"
+  );
+});
+
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", function() {
+  const isOpen = navMenu.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+navMenu.querySelectorAll("a").forEach(function(link) {
+  link.addEventListener("click", function() {
+    navMenu.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+```
